@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+var middleName = "Doe" // global variable
+
+func main() {
+	var age int
+	var name string = "John"
+	var name1 = "Jane"
+
+	count := 10
+	lastName := "Doe"
+
+	// Default values
+	// Numeric types: 0
+	// Boolean types: false
+	// String types: ""
+	// Pointer, slices, maps, functions and structs types: nil
+
+	fmt.Println(middleName)
+
+	fmt.Println(firstName)
+	printname()
+
+}
+
+func printname() {
+	firstName := "John"
+	fmt.Println(firstName)
+}
