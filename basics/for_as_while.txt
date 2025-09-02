@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// i := 1
+
+	// for i <= 5 { // while loop
+	// 	fmt.Println(i)
+	// 	i++
+	// }
+	// sum := 0
+	// for { // infinite loop
+	// 	sum += 10
+	// 	fmt.Println("Sum:", sum)
+	// 	if sum >= 100 {
+	// 		break
+	// 	}
+	// }
+
+	num := 1
+
+	for num <= 10 {
+		if num%2 == 0 {
+			num++
+			continue
+		}
+		fmt.Println(num)
+		num++
+
+	}
+}
