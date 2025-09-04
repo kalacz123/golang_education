@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func main() {
+	// ... - is ellipsis, it's used to pass a variable number of arguments to a function, must be the last parameter
+	// func functionName(param1 type1, param2 type2, paramN ... typeN) (return1 type1, return2 type2, ... returnN typeN) {
+	// 	// code
+	// }
+
+	// fmt.Println(sum(1, 2, 3, 4, 5))
+	slice := []int{1, 2, 3, 4, 5}
+	fmt.Println(sum("The sum is", slice...)) // unpacks the slice and passes the values to the function
+
+	returnString, total := sum("The sum is", 1, 2, 3, 4, 5)
+	fmt.Println(returnString, total)
+}
+
+func sum(returnString string, nums ...int) (string, int) {
+	total := 0
+	for _, v := range nums {
+		total += v
+	}
+	return returnString, total
+}

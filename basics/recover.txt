@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+
+func main(){
+
+	process()
+}
+
+func process(){
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered from panic:", r)
+		}
+	}()
+	fmt.Println("Processing")
+	panic("Panic")
+}
