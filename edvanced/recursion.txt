@@ -1,0 +1,54 @@
+package main
+
+import "fmt"
+
+// Recursion in Go
+//
+// Recursion is a programming technique where a function calls itself to solve a problem
+// by breaking it down into smaller, similar subproblems. In Go, recursive functions
+// must have:
+// 1. A base case (termination condition) to stop the recursion
+// 2. A recursive case where the function calls itself with modified parameters
+//
+// Common use cases:
+// - Mathematical calculations (factorial, fibonacci, power)
+// - Tree and graph traversal algorithms
+// - Divide-and-conquer algorithms (quicksort, mergesort)
+// - File system navigation
+// - Parsing nested structures (JSON, XML)
+//
+// Important considerations:
+// - Each recursive call adds a new frame to the call stack
+// - Deep recursion can cause stack overflow
+// - Iterative solutions are often more memory-efficient
+// - Go's default stack size can handle moderate recursion depths
+
+func main() {
+	fmt.Println(factorial(5))
+	fmt.Println(factorial(10))
+
+	fmt.Println(someOfDigits(12345))
+	fmt.Println(someOfDigits(1234567890))
+
+}
+
+func factorial(n int) int {
+	//Base case: factorial of 0 is 1
+	if n == 0 {
+		return 1
+	}
+	//Recursive case: factorial of n is n * factorial of n-1
+	return n * factorial(n-1)
+	// n * (n - 1) * (n - 2) * ... * 1
+}
+
+func someOfDigits(n int) int {
+	//Base case
+	if n < 10 {
+		return n
+	}
+
+	//Recursive case
+	return n%10 + someOfDigits(n/10)
+
+}
