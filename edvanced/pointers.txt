@@ -1,0 +1,47 @@
+package main
+
+import "fmt"
+
+// Pointers in Go
+//
+// A pointer is a variable that stores the memory address of another variable.
+// Go provides two operators for working with pointers:
+// - & (address operator): gets the memory address of a variable
+// - * (dereference operator): accesses the value stored at a memory address
+//
+// Declaration syntax:
+// var p *int        // p is a pointer to an int
+// p = &variable     // p now points to variable's memory address
+// value := *p       // dereference p to get the value
+//
+// Common use cases:
+// - Efficient passing of large structs to functions (avoid copying)
+// - Modifying function parameters (pass by reference)
+// - Dynamic memory allocation with new() and make()
+// - Implementing data structures like linked lists, trees
+// - Sharing data between goroutines safely
+//
+// Important notes:
+// - Zero value of a pointer is nil
+// - Go has automatic garbage collection, no manual memory management
+// - No pointer arithmetic (unlike C/C++)
+// - Safer than raw pointers in other languages
+
+func main(){
+	// var ptr *int // ptr is a pointer that stores the memory address of an int
+    var ptr *int  // initilized with nil
+	var a int = 10 // some variable with a value
+	ptr = &a // ptr now points to a's memory address
+
+	fmt.Println(a) // 10
+	fmt.Println(ptr) // 0x1400010020
+	fmt.Println(*ptr) // 10 //dereference ptr to get the value
+
+	modifyValue(ptr)
+	fmt.Println(a) // 11
+
+}
+
+func modifyValue(ptr *int){
+	*ptr++
+}
