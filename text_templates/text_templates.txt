@@ -1,0 +1,29 @@
+// package main
+
+// import (
+// 	"os"
+// 	"text/template"
+// )
+
+// func main() {
+// 	// tmpl := template.New("example")                                                       // create a new template
+// 	// tmpl, err := tmpl.Parse("Hello, {{.name}}, How are you? You are {{.age}} years old.\n") // {{.name}} and {{.age}} are placeholders for the data
+// 	// if err != nil {
+// 	// 	panic(err)
+// 	// }
+
+// 	// use template.Must to panic if the template is not valid
+// 	tmpl := template.Must(template.New("example").Parse("Hello, {{.name}}, How are you? You are {{.age}} years old.\n"))
+
+// 	// Define data for the welcome message template
+// 	data := map[string]any{
+// 		"name": "John",
+// 		"age":  20,
+// 	}
+
+// 	// execute the template
+// 	err := tmpl.Execute(os.Stdout, data)
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// }
