@@ -1,0 +1,67 @@
+package main
+
+import "fmt"
+
+func main() {
+	// fruit := "orange"
+
+	// switch fruit {
+	// case "apple" , "orange", "pineapple":
+	// 	fmt.Println("It's a fruit")
+	// case "potato":
+	// 	fmt.Println("It's a vegetable")
+	// default:
+	// 	fmt.Println("I don't know what this is")
+	// }
+
+	// fruit := "orange"
+
+	// switch fruit {
+	// case "orange":
+	// 	fmt.Println("It's a fruit")
+	// case "potato":
+	// 	fmt.Println("It's a vegetable")
+	// default:
+	// 	fmt.Println("I don't know what this is")
+	// }
+
+	// number := 15
+
+	// switch {
+	// case number < 10:
+	// 	fmt.Println("The number is less than 10")
+	// case number >= 10 && number < 20:
+	// 	fmt.Println("The number is between 10 and 20")
+	// default:
+	// 	fmt.Println("The number is greater than 20")
+	// }
+
+	// num := 2
+	// switch {
+	// case num > 1:
+	// 		fmt.Println("The number is greater than 1")
+	// 		fallthrough
+	// case num == 2:
+	// 	fmt.Println("The number is 2")
+	// default:
+	// 	fmt.Println("The number is not greater than 1 or 2")
+	// }
+	checkType(1)
+	checkType("Hello")
+	checkType(true)
+
+}
+
+func checkType(x interface{}){
+	switch x.(type) {
+	case int:
+		fmt.Println("The type of x is int")
+		// fallthrough: we can't use it in type switch
+	case int32:
+		fmt.Println("The type of x is int 32")
+	case string:
+		fmt.Println("The type of x is string")
+	case bool:
+		fmt.Println("The type of x is bool")
+	}
+}

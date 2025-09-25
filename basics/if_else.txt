@@ -1,0 +1,54 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// if condition {
+	// 	block of code
+	// } else { block of code}
+
+	age := 17
+
+	if age >= 18 {
+		fmt.Println("You are an adult")
+	} else {
+		fmt.Println("You are not an adult")
+	}
+
+	score := 85
+
+	if score >= 90 {
+		fmt.Println("You got an A")
+	} else if score >= 80 {
+		fmt.Println("You got a B")
+	} else if score >= 70 {
+		fmt.Println("You got a C")
+	} else {
+		fmt.Println("You got an F")
+	}
+
+	num := 12
+
+	if num%2 == 0 {
+		if num%3 == 0 {
+			fmt.Println("The number is divisible by 2 and 3")
+		} else {
+			fmt.Println("The number is divisible by 2 but not by 3")
+		}
+	} else {
+		fmt.Println("The number is not divisible by 2")
+	}
+
+	if 10 % 2 == 0 || 5 % 2 == 0 {
+		fmt.Println("One or both of the numbers is divisible by 2")
+	} else {
+		fmt.Println("None of the numbers are divisible by 2")
+	}
+
+	if 10 % 2 == 0 && 5 % 2 == 0 {
+		fmt.Println("Both numbers are divisible by 2")
+	} else {
+		fmt.Println("One or both of the numbers is not divisible by 2")
+	}
+}

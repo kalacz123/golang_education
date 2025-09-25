@@ -1,0 +1,58 @@
+package main
+
+import "fmt"
+
+func main() {
+	// func <name>(parameters list) returnType {
+	// 	code block
+	// 	return returnValue
+	// }
+	// func <name>(parameters list)(returnType1, returnType2){
+	// 	code block
+	// 	return returnValue1, returnValue2
+	// }
+
+	// sum := add(1, 2)
+	// fmt.Println(sum)
+
+	// func(){ // anonymous function
+	// 	fmt.Println("Hello")
+	// }()
+
+	// greet := func(){ // anonymous function
+	// 	fmt.Println("Hello")
+	// }
+
+	// greet()
+
+	// operation := add // function as a value
+	// result := operation(3, 4)
+	// fmt.Println(result)
+
+
+	// passing function as a parameter
+	result := applyOperation(3, 4, add)
+	fmt.Println(result)
+
+	// returning and using a function
+	multiplier := createMultiplier(2)
+	result = multiplier(3)
+	fmt.Println(result)
+
+}
+
+// function that takes a function as a parameter
+func applyOperation(x int, y int, operation func(int, int) int) int {
+	return operation(x, y)
+}
+
+//function that returns a function
+func createMultiplier(factor int) func(int) int {
+	return func(x int) int {
+		return factor * x
+	}
+}
+
+func add(a, b int) int { // default function
+	return a + b
+}

@@ -1,0 +1,61 @@
+package main
+
+import (
+	"fmt"
+	"slices"
+)
+
+func main() {
+
+	// slices are dynamic arrays, var slices []type
+	//var numbers1 []int                  // declared
+	var numbers2 = []int{1, 2, 3, 4, 5} // declared and initialized
+	fmt.Println(numbers2)
+	numbers3 := []int{9, 8, 7, 6, 5} // declared and initialized without var
+	fmt.Println(numbers3)
+	slice1 := make([]int, 5) // makes a slice of length 5, filled with 0s
+	fmt.Println(slice1)
+	a := [5]int{1, 2, 3, 4, 5}
+	slice2 := a[1:4]
+	fmt.Println(slice2)
+
+	slice3 := append(slice1, 6, 7, 8, 9, 10)
+	fmt.Println("slice3", slice3)
+
+	sliceCopy := make([]int, len(slice3))
+	copy(sliceCopy, slice3)
+	fmt.Println("sliceCopy", sliceCopy)
+
+	var nilslice []int
+	fmt.Println("nilslice", nilslice)
+
+	for i, v := range slice3 {
+		fmt.Printf("Index: %d, Value: %d\n", i, v)
+	}
+
+	if slices.Equal(slice3, sliceCopy) {
+		fmt.Println("slice3 and sliceCopy are equal")
+	} else {
+		fmt.Println("slice3 and sliceCopy are not equal")
+	}
+
+	twoD := make([][]int, 3)
+	for i := 0; i < 3; i++ {
+		innerLen := i + 1
+		twoD[i] = make([]int, innerLen)
+		for j := 0; j < innerLen; j++ {
+			twoD[i][j] = i + j
+			fmt.Printf("Adding value %d to twoD[%d] and inner array[%d]\n", i+j, i, j)
+		}
+	}
+	fmt.Println("twoD", twoD)
+
+	//slice low:high
+
+	slice5 := slice1[2:4]
+	fmt.Println("slice5", slice5)
+
+	fmt.Println("The capacity of slice5 is", cap(slice5))
+	fmt.Println("The length of slice5 is", len(slice5))
+}
+

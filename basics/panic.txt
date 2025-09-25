@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main(){
+	// panic (interface{}) is used to stop the execution of the program and print the message
+
+	process(-1)
+
+}
+
+func process(input int){
+	defer fmt.Println("Deferred 1")
+	defer fmt.Println("Deferred 2")
+	if input < 0 {
+		fmt.Println("Before panic")
+		panic("Input is less than 0")
+		//fmt.Println("After panic")
+		// defer fmt.Println("Deferred 3")
+	} else {
+		fmt.Println("Processing input:", input)
+	}
+}

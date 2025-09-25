@@ -1,0 +1,48 @@
+
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+func main() {
+
+	// func functionName(param1 type1, param2 type2) (return1 type1, return2 type2) {
+	// 	// code
+	// 	return return1, return2
+	// }
+
+	quotient, remainder := divide(10, 3)
+	fmt.Println(quotient, remainder)
+
+	result, err := compare(3, 3)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
+
+}
+
+func divide(a, b int) (int, int) {
+	quotient := a / b
+	remainder := a % b
+	return quotient, remainder
+}
+
+// func divide2(a, b int) (quotient int, remainder int) {  we can use this syntax to return the values without specifying the type
+// 	quotient = a / b
+// 	remainder = a % b
+// 	return
+// }
+
+func compare(a, b int) (string, error) {
+    if a > b {
+		return "a is greater than b", nil
+	} else if a < b {
+		return "a is less than b", nil
+	} else {
+		return "", errors.New("a and b are equal")
+	}
+}
